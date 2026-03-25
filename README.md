@@ -15,5 +15,13 @@ Checks HTTPS, security headers, and open ports, with a Flask dashboard and CSV e
 
 1. Clone:
    ```bash
+
+## 🌐 Live Demo
+
+You can try the scanner online:
+
+- **Live URL:**  
+  https://secure-scan-uk0e.onrender.com
+
    git clone https://github.com/YOUR-USERNAME/secure-scan.git
    cd secure-scan

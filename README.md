@@ -30,6 +30,9 @@ You can try the scanner online:
 
 secure-scan/
 ├── app.py # Flask web dashboard
+
+
+
 ├── scanner.py # Core scanner logic
 ├── requirements.txt # Python dependencies
 └── templates/

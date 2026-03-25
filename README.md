@@ -28,15 +28,30 @@ You can try the scanner online:
 
 ## 📁 Project Structure
 
-secure-scan/
+secure-scan
+
+
+
 ├── app.py # Flask web dashboard
 
 
 
 ├── scanner.py # Core scanner logic
+
+
+
 ├── requirements.txt # Python dependencies
-└── templates/
+
+
+
+└── templates
+
+
+
 ├── index.html # Scan input page
+
+
+
 └── report.html # Results page
 
 

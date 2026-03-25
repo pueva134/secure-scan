@@ -11,11 +11,6 @@ Checks HTTPS, security headers, and open ports, with a Flask dashboard and CSV e
 - Exports results to CSV.
 - Clean Bootstrap 5 dashboard.
 
-## How to Run
-
-1. Clone:
-   ```bash
-
 ## 🌐 Live Demo
 
 You can try the scanner online:

@@ -48,11 +48,11 @@ secure-scan
 
 
 
-        ├── index.html # Scan input page
+   ├── index.html # Scan input page
 
 
 
-        └── report.html # Results page
+   └── report.html # Results page
 
 
 ---

@@ -1,0 +1,4 @@
+requests
+beautifulsoup4
+Flask        # optional, for dashboard
+PyPDF2       # or reportlab if you want PDF

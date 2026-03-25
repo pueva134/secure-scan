@@ -1,0 +1,2 @@
+url,status_code,uses_https,missing_https,security_issues,port_80,port_443,port_8080
+https://www.meesho.com,403,True,False,missing X-Content-Type-Options; missing X-Frame-Options; missing Content-Security-Policy (CSP),OPEN,OPEN,CLOSED

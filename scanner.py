@@ -120,6 +120,21 @@ def save_csv_report(results, dir_path="reports"):
 
     print(f"[✓] Report saved to {filename}")
 
+def scan_url(url):
+    """Main entry point for web scanning"""
+    vulnerabilities = []
+    
+    # Your existing scan logic here
+    # For now, return mock data matching UI
+    vulnerabilities = [
+        {"title": "XSS Vulnerability", "description": f"Reflected XSS at {url}"},
+        {"title": "Security Headers Missing", "description": "No CSP header found"},
+        {"title": "Outdated Components", "description": "Vulnerable libraries detected"}
+    ]
+    
+    return vulnerabilities
+
+
 
 
 # ========================

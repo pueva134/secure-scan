@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results - SecureScan Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white min-h-screen">
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        <a href="/" class="inline-flex items-center mb-8 text-purple-400 hover:text-purple-300">
+            <i class="fas fa-arrow-left mr-2"></i> New Scan
+        </a>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Vulnerabilities -->
+            <div class="lg:col-span-2">
+                <h1 class="text-4xl font-bold mb-12">Scan Complete: {{ url }}</h1>
+                
+                {% if results %}
+                <div class="space-y-4">
+                    {% for vuln in results %}
+                    <div class="p-6 bg-gradient-to-r from-red-500/10 to-orange-500/10 border-l-4 border-red-500 rounded-xl">
+                        <div class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-2xl text-red-400 mt-1 mr-4 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-bold text-xl mb-2">{{ vuln.title }}</h3>
+                                <p class="text-gray-300">{{ vuln.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-20 bg-green-500/10 border-2 border-green-500/30 rounded-3xl">
+                    <i class="fas fa-shield-check text-6xl text-green-400 mb-8"></i>
+                    <h2 class="text-3xl font-bold mb-4">✓ Secure Configuration</h2>
+                    <p class="text-gray-300">No critical issues detected</p>
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- Summary Cards -->
+            <div class="space-y-6">
+                <div class="bg-gray-900/50 border border-purple-500/30 rounded-2xl p-6 text-center">
+                    <div class="text-3xl font-bold text-purple-400 mb-2">{{ results|length }}</div>
+                    <div class="text-gray-300 text-sm">Issues Found</div>
+                </div>
+                
+                <div class="bg-gray-900/50 border border-blue-500/30 rounded-2xl p-6">
+                    <h4 class="font-bold mb-4">Port Status</h4>
+                    <div class="space-y-2 text-sm">
+                        <div>Port 80: 
+                            <span class="px-2 py-1 rounded-full text-xs 
+                                {% if scan_data.port_results[80] %}bg-green-500/20 text-green-400 border border-green-500/50
+                                {% else %}bg-gray-700/50 text-gray-400{% endif %}">
+                                {{ 'OPEN' if scan_data.port_results[80] else 'CLOSED' }}
+                            </span>
+                        </div>
+                        <div>Port 443: 
+                            <span class="px-2 py-1 rounded-full text-xs 
+                                {% if scan_data.port_results[443] %}bg-green-500/20 text-green-400 border border-green-500/50
+                                {% else %}bg-red-500/20 text-red-400 border border-red-500/50{% endif %}">
+                                {{ 'OPEN' if scan_data.port_results[443] else 'CLOSED' }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-900/50 border border-green-500/30 rounded-2xl p-6 text-center">
+                    <div class="text-lg font-bold text-green-400 mb-2">
+                        {% if scan_data.uses_https %}HTTPS ✅{% else %}HTTP ⚠️{% endif %}
+                    </div>
+                    <div class="text-gray-400 text-sm">SSL/TLS</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,76 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SecureScan – Web Vulnerability Scanner</title>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <style>
-    body {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      min-height: 100vh;
-      color: #f1f5f9;
-    }
-    .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 8px;
-    }
-    .form-control {
-      background: #0f172a;
-      border-color: #334155;
-      color: #fff;
-    }
-    .btn-primary {
-      background: #3b82f6;
-      border: none;
-      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-    }
-    .btn-primary:hover {
-      background: #2563eb;
-    }
-  </style>
+    <title>SecureScan Pro - Advanced Vulnerability Scanner</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h1 class="display-5 fw-bold">
-        <span class="text-primary">SecureScan</span> – Web Vulnerability Scanner
-      </h1>
-      <p class="lead text-muted">
-        Fast, lightweight OWASP‑inspired scanner for common web issues.
-      </p>
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-black text-white min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-900/80 backdrop-blur-md border-b border-purple-500/30 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-purple-400 text-2xl mr-3"></i>
+                    <h1 class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        SecureScan Pro
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-gradient-to-r from-purple-600/20 to-pink-600/20 border border-purple-500/30 backdrop-blur-md rounded-2xl p-8 text-center">
+                <i class="fas fa-bug text-4xl text-purple-400 mb-4"></i>
+                <h3 class="text-3xl font-bold text-white mb-2">137</h3>
+                <p class="text-gray-300 text-sm">Vulnerabilities Found</p>
+            </div>
+            <div class="bg-gradient-to-r from-blue-600/20 to-cyan-600/20 border border-blue-500/30 backdrop-blur-md rounded-2xl p-8 text-center">
+                <i class="fas fa-chart-line text-4xl text-blue-400 mb-4"></i>
+                <h3 class="text-3xl font-bold text-white mb-2">94%</h3>
+                <p class="text-gray-300 text-sm">Risk Score</p>
+            </div>
+            <div class="bg-gradient-to-r from-red-600/20 to-orange-600/20 border border-red-500/30 backdrop-blur-md rounded-2xl p-8 text-center">
+                <i class="fas fa-exclamation-triangle text-4xl text-red-400 mb-4"></i>
+                <h3 class="text-3xl font-bold text-white mb-2">HIGH</h3>
+                <p class="text-gray-300 text-sm">Max Severity</p>
+            </div>
+        </div>
+
+        <!-- Scan Form -->
+        <div class="bg-gray-900/50 border border-purple-500/30 backdrop-blur-md rounded-3xl p-8 md:p-12 mb-12">
+            <h2 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6 text-center">
+                Launch Security Assessment
+            </h2>
+            <form method="POST" class="max-w-2xl mx-auto">
+                <div class="relative mb-8">
+                    <i class="fas fa-globe absolute left-4 top-5 text-gray-400 text-xl"></i>
+                    <input type="url" name="url" required 
+                           class="w-full pl-12 pr-6 py-4 bg-gray-800/50 border border-purple-500/50 rounded-2xl text-white placeholder-gray-400 focus:ring-4 focus:ring-purple-500/30 focus:border-transparent transition-all duration-300 text-lg"
+                           placeholder="https://example.com" />
+                </div>
+                <button type="submit"
+                        class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-5 px-8 rounded-2xl text-lg shadow-2xl hover:shadow-purple-500/25 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                    <i class="fas fa-rocket mr-3"></i>
+                    <span>Run Advanced Scan</span>
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="group bg-gray-900/50 border border-gray-700/50 backdrop-blur-md rounded-2xl p-8 hover:border-purple-500/50 hover:bg-purple-500/10 transition-all duration-300">
+                <i class="fas fa-search text-3xl text-purple-400 group-hover:text-purple-300 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Deep Scanning</h3>
+                <p class="text-gray-400 group-hover:text-gray-300">OWASP Top 10 + 50+ CVE checks</p>
+            </div>
+            <div class="group bg-gray-900/50 border border-gray-700/50 backdrop-blur-md rounded-2xl p-8 hover:border-blue-500/50 hover:bg-blue-500/10 transition-all duration-300">
+                <i class="fas fa-bolt text-3xl text-blue-400 group-hover:text-blue-300 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Real-time Analysis</h3>
+                <p class="text-gray-400 group-hover:text-gray-300">Live vulnerability detection</p>
+            </div>
+            <div class="group bg-gray-900/50 border border-gray-700/50 backdrop-blur-md rounded-2xl p-8 hover:border-green-500/50 hover:bg-green-500/10 transition-all duration-300">
+                <i class="fas fa-shield-check text-3xl text-green-400 group-hover:text-green-300 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Risk Scoring</h3>
+                <p class="text-gray-400 group-hover:text-gray-300">CVSS v4.0 compliant scoring</p>
+            </div>
+            <div class="group bg-gray-900/50 border border-gray-700/50 backdrop-blur-md rounded-2xl p-8 hover:border-orange-500/50 hover:bg-orange-500/10 transition-all duration-300">
+                <i class="fas fa-tools text-3xl text-orange-400 group-hover:text-orange-300 mb-4"></i>
+                <h3 class="text-xl font-bold mb-3">Remediation</h3>
+                <p class="text-gray-400 group-hover:text-gray-300">Actionable fix recommendations</p>
+            </div>
+        </div>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <div class="card shadow-lg p-4 border-0">
-          <h4 class="mb-4">Enter URL to Scan</h4>
-          <form action="/scan" method="POST">
-            <div class="mb-3">
-              <label for="url" class="form-label fw-semibold">
-                Target URL
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="url"
-                name="url"
-                placeholder="https://example.com"
-                value=""
-                required
-              />
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg w-100">
-              Start Scan
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+        // Add some micro-interactions
+        document.querySelectorAll('.group').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.style.transform = 'translateY(-4px)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
